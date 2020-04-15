@@ -14,6 +14,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Event;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Window;
 import com.mygdx.game.desktop.MyGdxGame;
 
@@ -21,6 +22,7 @@ import org.w3c.dom.events.MouseEvent;
 
 public class Level1 implements Screen{
 
+	
 	Red r = new Red();
 	Yellow y = new Yellow();
 	Background back = new Background();
@@ -66,33 +68,23 @@ public class Level1 implements Screen{
 		System.out.println("dispose");
 	}
 
-
 	@Override
 	public void show() {
-		
 		System.out.println("Create");
 
 		
 		r.getSred().setX(970);
 		r.getSred().setY(135);
-//sground.ser
 		slingy.getSslingshot().setX(90);
 		slingy.getSslingshot().setY(140);
-
 		block.getSvblock().setY(-30);
 		block.getSvblock().setX(350);
-
 		block2.getSvblock().setY(-30);
 		block2.getSvblock().setX(165);
-
 		block.getShblock().setY(80);
 		block.getShblock().setX(260);
 		
-
 	}
-
-
-
 
 	@Override
 	public void hide() {

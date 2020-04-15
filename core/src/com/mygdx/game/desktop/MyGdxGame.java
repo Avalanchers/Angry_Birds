@@ -36,7 +36,7 @@ public class MyGdxGame extends Game {
 	public void create ()
 	{
 		assets = new AssetManager();
-		setScreen(new Level1());
+		setScreen(new Splash(app));
 	}
 	
 	public void SetScreen(Screen screen)

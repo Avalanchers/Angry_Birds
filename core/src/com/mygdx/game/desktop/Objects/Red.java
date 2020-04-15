@@ -1,5 +1,8 @@
 package com.mygdx.game.desktop.Objects;
 import com.badlogic.gdx.graphics.g2d.*;
+
+import aurelienribon.tweenengine.TweenAccessor;
+
 import com.badlogic.gdx.graphics.*;
 public class Red {
 	private Texture red;
