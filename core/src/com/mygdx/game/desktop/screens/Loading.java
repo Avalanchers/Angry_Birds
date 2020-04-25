@@ -1,11 +1,12 @@
 package com.mygdx.game.desktop.screens;
 
 import com.badlogic.gdx.Gdx;
+
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.mygdx.game.desktop.MyGdxGame;
+import com.mygdx.game.*;
 
 public class Loading implements Screen {
 	

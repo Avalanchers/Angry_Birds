@@ -30,7 +30,7 @@ public class MainMenu implements Screen
 		background=new Texture("SS.jpg");
 		sbackgroung=new Sprite(background);
 		sbackgroung.setOrigin(0, 0);
-		sbackgroung.setScale(.7f, .8f);
+		sbackgroung.setScale(.66f, .52f);
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class MainMenu implements Screen
 		sbackgroung.draw(game.batch);
 		sbackgroung.draw(game.batch);
 		
-		if(Gdx.input.getX()>431&&Gdx.input.getX()<830&&Gdx.input.getY()>394 &&Gdx.input.getY()<480)
+		if(Gdx.input.getX()>400&&Gdx.input.getX()<786&&Gdx.input.getY()>327 &&Gdx.input.getY()<380)
 		{
 			if(Gdx.input.isTouched())
 			{
@@ -49,6 +49,8 @@ public class MainMenu implements Screen
 				game.setScreen(new LevelsMenu(game));			
 			}
 		}
+		System.out.println(Gdx.input.getX());
+		System.out.println(Gdx.input.getY());
 
 		game.batch.end();
 	}

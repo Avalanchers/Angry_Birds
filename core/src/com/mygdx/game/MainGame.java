@@ -12,13 +12,13 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class MainGame extends Game {
 	
 	public SpriteBatch batch;
-	public static final int width=1200;
-	public static final int height=1000;
+	public static final int width=1150;
+	public static final int height=720;
 	
 	@Override
 	public void create () {
 		batch=new SpriteBatch();
-		this.setScreen(new MainMenu(this));
+		this.setScreen(new LoadingScreen(this));
 	}
 
 	@Override

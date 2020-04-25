@@ -1,5 +1,6 @@
 package com.mygdx.game.desktop.screens;
 import com.mygdx.game.desktop.Objects.*;
+
 import java.io.File;
 
 import javax.swing.Spring;
@@ -16,13 +17,12 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Event;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Window;
-import com.mygdx.game.desktop.MyGdxGame;
-
+import com.mygdx.game.*;
 import org.w3c.dom.events.MouseEvent;
 
 public class Level1 implements Screen{
 
-	
+	MainGame game;
 	Red r = new Red();
 	Yellow y = new Yellow();
 	Background back = new Background();
@@ -31,10 +31,15 @@ public class Level1 implements Screen{
 	Slingshot slingy = new Slingshot();
 	SpriteBatch batch;
 
+	public Level1(MainGame game)
+	{
+		this.game = game;
+	}
+	
 	@Override
 	public void render(float delta) {
 		System.out.println("render");
-		Gdx.graphics.setWindowedMode(1280, 720);
+		Gdx.graphics.setWindowedMode(1150, 720);
 		batch=new SpriteBatch();
 		batch.begin();
 		back.getSprite().draw(batch);
