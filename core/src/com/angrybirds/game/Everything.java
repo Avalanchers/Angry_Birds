@@ -4,6 +4,7 @@ import static com.angrybirds.game.game.PPM;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.World;
 
@@ -37,5 +38,11 @@ public abstract class Everything  {
 		//sprite.setRotation(rotation);
 		// Then we simply draw it as a normal sprite.
 		sprite.draw(batch);
+	}
+	public void incV()
+	{
+		Vector2 velocity = body.getLinearVelocity().cpy();
+		velocity.set(velocity.x*1.09f, velocity.y);
+		body.setLinearVelocity(velocity);
 	}
 }

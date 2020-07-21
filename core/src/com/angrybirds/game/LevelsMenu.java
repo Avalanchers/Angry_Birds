@@ -39,6 +39,14 @@ public class LevelsMenu implements Screen
 				Game.setScreen((Screen) new game(Game));
 			}
 		}
+		if(Gdx.input.getY()>=360&&Gdx.input.getY()<=420&&Gdx.input.getX()>=400&&Gdx.input.getX()<=780)
+		{
+			if(Gdx.input.isTouched())
+			{
+				this.dispose();
+				Game.setScreen((Screen) new game2(Game));
+			}
+		}
 		System.out.println(Gdx.input.getX());
 		System.out.println(Gdx.input.getY());
         Game.batch.end();

@@ -19,7 +19,7 @@ import com.badlogic.gdx.physics.box2d.Box2D;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 
-public class game implements Screen {
+public class game2 implements Screen {
 		 SpriteBatch batch;
 
 		Texture img;
@@ -38,7 +38,7 @@ public class game implements Screen {
 		Sprite SSling;
 		Sprite SSling2;
 		MainGame Game;
-		public game(MainGame Game)
+		public game2(MainGame Game)
 		{
 			this.Game=Game;
 		}
@@ -113,7 +113,7 @@ public class game implements Screen {
 				batch.draw(SSling, 0.95f, 2, 1F, 1.2F);
 				batch.draw(SSling2, 0.325f, 1.3f, 1F, 1.2F, 6 ,8, 0.1f, 0.1f, 0);
 
-				if ( Gdx.input.getPressure() == 1 && pausePhysics && includes((yellowBird) player , new Vector2(Gdx.input.getX()/2,(Gdx.graphics.getHeight() - Gdx.input.getY()) /2 )))
+				if ( Gdx.input.getPressure() == 1 && pausePhysics && includes((Bird) player , new Vector2(Gdx.input.getX()/2,(Gdx.graphics.getHeight() - Gdx.input.getY()) /2 )))
 				{
 					//System.out.println("sfgnskjdfnas");
 					hold =true;
@@ -214,7 +214,7 @@ public class game implements Screen {
 
 
 
-	public boolean includes(yellowBird player,Vector2 mousePoint ) {
+	public boolean includes(Bird player,Vector2 mousePoint ) {
 			if (mousePoint.x > player.body.getPosition().x*PPM - (player.width) && mousePoint.x < player.body.getPosition().x*PPM + (player.width) &&
 			mousePoint.y > player.body.getPosition().y*PPM - (player.height)  && mousePoint.y < player.body.getPosition().y*PPM + (player.height))
 					return true;
@@ -238,7 +238,7 @@ public class game implements Screen {
 		img = new Texture("Pig.png");
 		Wood_texture = new Texture("Wood1.png");
 		background = new Texture("background.png");
-		Birds = new Texture("yellow.png");
+		Birds = new Texture("red.png");
 		Sling=new Texture("slingshot.png");
 		Sling2=new Texture("slingpart.png");
 		test2 = new Sprite(Birds);
@@ -251,7 +251,7 @@ public class game implements Screen {
 		test2.setSize(50,50);
 		Wood1Sprite.setSize(10/PPM , 30/PPM);
 
-		player = new yellowBird(world, 50, 100, 10, 10, false , test2);
+		player = new Bird(world, 50, 100, 10, 10, false , test2);
 		player.body.setUserData(test2);
 		enemies = new Pig[5];
 		levelObjects = new Obstacle[NumOfObjects];
