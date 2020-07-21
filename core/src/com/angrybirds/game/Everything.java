@@ -16,7 +16,7 @@ public abstract class Everything  {
 	int width;
 	protected Body body;
 	protected Sprite sprite;
-
+	public boolean stationary;
 
 	public Everything(World world, int x , int y , int width , int height , boolean isStatic , Sprite sprite){
 		health = 100 ;
@@ -37,6 +37,7 @@ public abstract class Everything  {
 		sprite.setPosition(posX, posY);
 		//sprite.setRotation(rotation);
 		// Then we simply draw it as a normal sprite.
+		stationary = true;
 		sprite.draw(batch);
 	}
 	public void incV()

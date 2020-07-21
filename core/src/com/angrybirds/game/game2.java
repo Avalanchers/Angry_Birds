@@ -28,10 +28,14 @@ public class game2 implements Screen {
 		Texture Wood_texture;
 		Texture Sling;
 		Texture Sling2;
+		Texture backbutt;
+		Texture backG2;
 		Sprite test2;
 		Sprite test;
 		Sprite test1;
+		Sprite back;
 
+		Sprite backG1;
 		Sprite Wood1Sprite;
 		Sprite Wood2Sprite;
 		Sprite sprite;
@@ -40,7 +44,7 @@ public class game2 implements Screen {
 		MainGame Game;
 		public game2(MainGame Game)
 		{
-			this.Game=Game;
+			this.Game= Game;
 		}
 		public World world;
 		Box2DDebugRenderer dDebugRenderer;
@@ -109,9 +113,11 @@ public class game2 implements Screen {
 				Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 				
 				batch.begin();
+				batch.draw(backG1, 0, 0.03f, 25, 12.5f);
 				batch.draw(test1, 0, 0, 30, 5);
 				batch.draw(SSling, 0.95f, 2, 1F, 1.2F);
 				batch.draw(SSling2, 0.325f, 1.3f, 1F, 1.2F, 6 ,8, 0.1f, 0.1f, 0);
+				batch.draw(back, 50,0,30,5);
 
 				if ( Gdx.input.getPressure() == 1 && pausePhysics && includes((Bird) player , new Vector2(Gdx.input.getX()/2,(Gdx.graphics.getHeight() - Gdx.input.getY()) /2 )))
 				{
@@ -146,12 +152,18 @@ public class game2 implements Screen {
 			player.sprite.setOrigin(player.sprite.getWidth()/2 , player.sprite.getHeight()/2);
 			player.sprite.setRotation(MathUtils.radiansToDegrees * player.body.getAngle());
 			player.sprite.draw(batch);
-			if(Gdx.input.isTouched())
+//			if(Gdx.input.isTouched())
+//			{
+//				player.incV();
+//				player.sprite.draw(batch);
+//			}
+			if(Gdx.input.getY()>=28 && Gdx.input.getY()<=74 && Gdx.input.getX()>=32 && Gdx.input.getX()<=125 && Gdx.input.isTouched())
 			{
-				player.incV();
-				player.sprite.draw(batch);
+//					this.dispose();
+					Game.setScreen((Screen) new LevelsMenu(Game));
 			}
-
+			System.out.println(Gdx.input.getX());
+			System.out.println(Gdx.input.getY());
 			batch.end();
 			dDebugRenderer.render(world,camera.combined);
 			//System.out.println(Gdx.input.getX()/PPM + " " + (Gdx.graphics.getHeight() - Gdx.input.getY())/PPM + " " + player.body.getPosition().x +" " +  player.body.getPosition().y);
@@ -241,16 +253,19 @@ public class game2 implements Screen {
 		Birds = new Texture("red.png");
 		Sling=new Texture("slingshot.png");
 		Sling2=new Texture("slingpart.png");
+		backbutt = new Texture("Back.png");
+		backG2 = new Texture("background2.png");
+		backG1 = new Sprite(backG2);
 		test2 = new Sprite(Birds);
 		test = new Sprite(img);
 		test1 = new Sprite(background);
 		SSling=new Sprite(Sling);
 		SSling2=new Sprite(Sling2);
-		
+		back = new Sprite(backbutt);
 		Wood1Sprite= new Sprite(Wood_texture);
 		test2.setSize(50,50);
 		Wood1Sprite.setSize(10/PPM , 30/PPM);
-
+		back.setScale(0.2f,0.2f);
 		player = new Bird(world, 50, 100, 10, 10, false , test2);
 		player.body.setUserData(test2);
 		enemies = new Pig[5];

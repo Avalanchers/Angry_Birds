@@ -1,20 +1,27 @@
-package com.angrybirds.game;
+package com.mygdx.game;
 
+import com.badlogic.gdx.ApplicationAdapter;
+
+import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.mygdx.game.desktop.screens.*; 
+import aurelienribon.tweenengine.*;
 
 public class LevelsMenu implements Screen
 {
 	Texture background1;
     Sprite sbackgroung1;    
-    MainGame Game;
+    MainGame game;
    
    
-    public LevelsMenu(MainGame Game)
+    public LevelsMenu(MainGame game)
     {
-        this.Game=Game;
+        this.game=game;
     } 
 
     @Override
@@ -28,36 +35,20 @@ public class LevelsMenu implements Screen
     @Override
     public void render(float delta) 
     {
-        Game.batch.begin();
-        sbackgroung1.draw(Game.batch);
-		sbackgroung1.draw(Game.batch);
+        game.batch.begin();
+        sbackgroung1.draw(game.batch);
+		sbackgroung1.draw(game.batch);
 		if(Gdx.input.getY()>=279&&Gdx.input.getY()<=335&&Gdx.input.getX()>=400&&Gdx.input.getX()<=777)
 		{
 			if(Gdx.input.isTouched())
 			{
 				this.dispose();
-				Game.setScreen((Screen) new game2(Game));
-			}
-		}
-		if(Gdx.input.getY()>=370&&Gdx.input.getY()<=420&&Gdx.input.getX()>=400&&Gdx.input.getX()<=780)
-		{
-			if(Gdx.input.isTouched())
-			{
-				this.dispose();
-				Game.setScreen((Screen) new game(Game));
-			}
-		}
-		if(Gdx.input.getY()>=28 && Gdx.input.getY()<=74 && Gdx.input.getX()>=32 && Gdx.input.getX()<=220)
-		{
-			if(Gdx.input.isTouched())
-			{
-//				this.dispose();
-				Game.setScreen((Screen) new MainMenu(Game));	
+				game.setScreen(new Level1(game));
 			}
 		}
 		System.out.println(Gdx.input.getX());
 		System.out.println(Gdx.input.getY());
-        Game.batch.end();
+        game.batch.end();
     }
 
     @Override

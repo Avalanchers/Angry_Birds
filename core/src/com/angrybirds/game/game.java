@@ -28,10 +28,11 @@ public class game implements Screen {
 		Texture Wood_texture;
 		Texture Sling;
 		Texture Sling2;
+		Texture BackG2;
 		Sprite test2;
 		Sprite test;
 		Sprite test1;
-
+		Sprite BackG1;
 		Sprite Wood1Sprite;
 		Sprite Wood2Sprite;
 		Sprite sprite;
@@ -109,6 +110,7 @@ public class game implements Screen {
 				Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 				
 				batch.begin();
+				batch.draw(BackG1, 0, 0.03f, 25, 12.5f);
 				batch.draw(test1, 0, 0, 30, 5);
 				batch.draw(SSling, 0.95f, 2, 1F, 1.2F);
 				batch.draw(SSling2, 0.325f, 1.3f, 1F, 1.2F, 6 ,8, 0.1f, 0.1f, 0);
@@ -151,7 +153,11 @@ public class game implements Screen {
 				player.incV();
 				player.sprite.draw(batch);
 			}
-
+			if(Gdx.input.getY()>=28 && Gdx.input.getY()<=74 && Gdx.input.getX()>=32 && Gdx.input.getX()<=125 && Gdx.input.isTouched())
+			{
+//					this.dispose();
+					Game.setScreen((Screen) new LevelsMenu(Game));
+			}
 			batch.end();
 			dDebugRenderer.render(world,camera.combined);
 			//System.out.println(Gdx.input.getX()/PPM + " " + (Gdx.graphics.getHeight() - Gdx.input.getY())/PPM + " " + player.body.getPosition().x +" " +  player.body.getPosition().y);
@@ -241,6 +247,8 @@ public class game implements Screen {
 		Birds = new Texture("yellow.png");
 		Sling=new Texture("slingshot.png");
 		Sling2=new Texture("slingpart.png");
+		BackG2 = new Texture("background2.png");
+		BackG1 = new Sprite(BackG2);
 		test2 = new Sprite(Birds);
 		test = new Sprite(img);
 		test1 = new Sprite(background);
