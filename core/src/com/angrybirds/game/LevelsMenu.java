@@ -36,7 +36,7 @@ public class LevelsMenu implements Screen
 			if(Gdx.input.isTouched())
 			{
 				this.dispose();
-				Game.setScreen((Screen) new game(Game));
+				Game.setScreen((Screen) new game2(Game));
 			}
 		}
 		if(Gdx.input.getY()>=360&&Gdx.input.getY()<=420&&Gdx.input.getX()>=400&&Gdx.input.getX()<=780)
@@ -44,7 +44,7 @@ public class LevelsMenu implements Screen
 			if(Gdx.input.isTouched())
 			{
 				this.dispose();
-				Game.setScreen((Screen) new game2(Game));
+				Game.setScreen((Screen) new game(Game));
 			}
 		}
 		System.out.println(Gdx.input.getX());
