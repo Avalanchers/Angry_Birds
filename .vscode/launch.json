@@ -6,12 +6,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - DesktopLauncher",
+            "request": "launch",
+            "mainClass": "com.angrybirds.game.desktop.DesktopLauncher",
+            "projectName": "Angry_birds-game-desktop"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) with Arguments Prompt",
             "request": "launch",
             "mainClass": "",
             "args": "${command:SpecifyProgramArgs}"
         },
-        
         {
             "type": "java",
             "name": "Debug (Launch) - Current File",
