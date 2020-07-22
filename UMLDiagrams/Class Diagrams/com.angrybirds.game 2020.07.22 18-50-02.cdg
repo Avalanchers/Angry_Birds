@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="com.angrybirds.game">
+  <ClassDiagramComponents>
+    <Class name="Bird" package="com.angrybirds.game" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="World" name="world"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+          <Argument type="boolean" name="isStatic"/>
+          <Argument type="Sprite" name="sprite"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="create" returnType="Body" visibility="protected">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+          <Argument type="boolean" name="isStatic"/>
+          <Argument type="World" name="world"/>
+        </Method>
+        <Method name="getCondition" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Everything" package="com.angrybirds.game" visibility="public" isAbstract="true" xPosition="18.0" yPosition="453.0">
+      <Fields>
+        <Field name="imgPath" type="String[]" visibility="protected"/>
+        <Field name="health" type="int" visibility="protected"/>
+        <Field name="condition" type="int" visibility="protected"/>
+        <Field name="height" type="int" visibility="package"/>
+        <Field name="width" type="int" visibility="package"/>
+        <Field name="body" type="Body" visibility="protected"/>
+        <Field name="sprite" type="Sprite" visibility="protected"/>
+        <Field name="stationary" type="boolean" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="World" name="world"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+          <Argument type="boolean" name="isStatic"/>
+          <Argument type="Sprite" name="sprite"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="create" returnType="Body" visibility="protected" isAbstract="true">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+          <Argument type="boolean" name="isStatic"/>
+          <Argument type="World" name="world"/>
+        </Method>
+        <Method name="render" returnType="void" visibility="public">
+          <Argument type="SpriteBatch" name="batch"/>
+        </Method>
+        <Method name="incV" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="game" package="com.angrybirds.game" visibility="public" xPosition="618.0" yPosition="281.0">
+      <Fields>
+        <Field name="batch" type="SpriteBatch" visibility="package"/>
+        <Field name="img" type="Texture" visibility="package"/>
+        <Field name="Birds" type="Texture" visibility="package"/>
+        <Field name="background" type="Texture" visibility="package"/>
+        <Field name="Wood_texture" type="Texture" visibility="package"/>
+        <Field name="Sling" type="Texture" visibility="package"/>
+        <Field name="Sling2" type="Texture" visibility="package"/>
+        <Field name="BackG2" type="Texture" visibility="package"/>
+        <Field name="test2" type="Sprite" visibility="package"/>
+        <Field name="test" type="Sprite" visibility="package"/>
+        <Field name="test1" type="Sprite" visibility="package"/>
+        <Field name="BackG1" type="Sprite" visibility="package"/>
+        <Field name="Wood1Sprite" type="Sprite" visibility="package"/>
+        <Field name="Wood2Sprite" type="Sprite" visibility="package"/>
+        <Field name="sprite" type="Sprite" visibility="package"/>
+        <Field name="SSling" type="Sprite" visibility="package"/>
+        <Field name="SSling2" type="Sprite" visibility="package"/>
+        <Field name="Game" type="MainGame" visibility="package"/>
+        <Field name="world" type="World" visibility="public"/>
+        <Field name="dDebugRenderer" type="Box2DDebugRenderer" visibility="package"/>
+        <Field name="camera" type="OrthographicCamera" visibility="package"/>
+        <Field name="NumOfObjects" type="int" visibility="package"/>
+        <Field name="player" type="Everything" visibility="package"/>
+        <Field name="pausePhysics" type="boolean" visibility="package"/>
+        <Field name="hold" type="boolean" visibility="package"/>
+        <Field name="PPM" type="float" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="mouseOrigin" type="Vector2" visibility="public"/>
+        <Field name="MouseLimit" type="int" visibility="package" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="MainGame" name="Game"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="render" returnType="void" visibility="public">
+          <Argument type="float" name="delta"/>
+        </Method>
+        <Method name="dispose" returnType="void" visibility="public"/>
+        <Method name="resize" returnType="void" visibility="public">
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+        </Method>
+        <Method name="moveCamera" returnType="void" visibility="public"/>
+        <Method name="getMouseInput" returnType="void" visibility="public"/>
+        <Method name="includes" returnType="boolean" visibility="public">
+          <Argument type="yellowBird" name="player"/>
+          <Argument type="Vector2" name="mousePoint"/>
+        </Method>
+        <Method name="show" returnType="void" visibility="public"/>
+        <Method name="pause" returnType="void" visibility="public"/>
+        <Method name="resume" returnType="void" visibility="public"/>
+        <Method name="hide" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="game2" package="com.angrybirds.game" visibility="public" xPosition="1023.0" yPosition="253.0">
+      <Fields>
+        <Field name="batch" type="SpriteBatch" visibility="package"/>
+        <Field name="img" type="Texture" visibility="package"/>
+        <Field name="Birds" type="Texture" visibility="package"/>
+        <Field name="background" type="Texture" visibility="package"/>
+        <Field name="Wood_texture" type="Texture" visibility="package"/>
+        <Field name="Sling" type="Texture" visibility="package"/>
+        <Field name="Sling2" type="Texture" visibility="package"/>
+        <Field name="backbutt" type="Texture" visibility="package"/>
+        <Field name="backG2" type="Texture" visibility="package"/>
+        <Field name="test2" type="Sprite" visibility="package"/>
+        <Field name="test" type="Sprite" visibility="package"/>
+        <Field name="test1" type="Sprite" visibility="package"/>
+        <Field name="back" type="Sprite" visibility="package"/>
+        <Field name="backG1" type="Sprite" visibility="package"/>
+        <Field name="Wood1Sprite" type="Sprite" visibility="package"/>
+        <Field name="Wood2Sprite" type="Sprite" visibility="package"/>
+        <Field name="sprite" type="Sprite" visibility="package"/>
+        <Field name="SSling" type="Sprite" visibility="package"/>
+        <Field name="SSling2" type="Sprite" visibility="package"/>
+        <Field name="Game" type="MainGame" visibility="package"/>
+        <Field name="world" type="World" visibility="public"/>
+        <Field name="dDebugRenderer" type="Box2DDebugRenderer" visibility="package"/>
+        <Field name="camera" type="OrthographicCamera" visibility="package"/>
+        <Field name="NumOfObjects" type="int" visibility="package"/>
+        <Field name="player" type="Everything" visibility="package"/>
+        <Field name="pausePhysics" type="boolean" visibility="package"/>
+        <Field name="hold" type="boolean" visibility="package"/>
+        <Field name="PPM" type="float" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="mouseOrigin" type="Vector2" visibility="public"/>
+        <Field name="MouseLimit" type="int" visibility="package" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="MainGame" name="Game"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="render" returnType="void" visibility="public">
+          <Argument type="float" name="delta"/>
+        </Method>
+        <Method name="dispose" returnType="void" visibility="public"/>
+        <Method name="resize" returnType="void" visibility="public">
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+        </Method>
+        <Method name="moveCamera" returnType="void" visibility="public"/>
+        <Method name="getMouseInput" returnType="void" visibility="public"/>
+        <Method name="includes" returnType="boolean" visibility="public">
+          <Argument type="Bird" name="player"/>
+          <Argument type="Vector2" name="mousePoint"/>
+        </Method>
+        <Method name="show" returnType="void" visibility="public"/>
+        <Method name="pause" returnType="void" visibility="public"/>
+        <Method name="resume" returnType="void" visibility="public"/>
+        <Method name="hide" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="LevelsMenu" package="com.angrybirds.game" visibility="public" xPosition="1421.0" yPosition="74.0">
+      <Fields>
+        <Field name="background1" type="Texture" visibility="package"/>
+        <Field name="sbackgroung1" type="Sprite" visibility="package"/>
+        <Field name="Game" type="MainGame" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="MainGame" name="Game"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="show" returnType="void" visibility="public"/>
+        <Method name="render" returnType="void" visibility="public">
+          <Argument type="float" name="delta"/>
+        </Method>
+        <Method name="resize" returnType="void" visibility="public">
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+        </Method>
+        <Method name="pause" returnType="void" visibility="public"/>
+        <Method name="resume" returnType="void" visibility="public"/>
+        <Method name="hide" returnType="void" visibility="public"/>
+        <Method name="dispose" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MainGame" package="com.angrybirds.game" visibility="public" xPosition="675.0" yPosition="20.0">
+      <Fields>
+        <Field name="batch" type="SpriteBatch" visibility="public"/>
+        <Field name="width" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="height" type="int" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="create" returnType="void" visibility="public"/>
+        <Method name="render" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MainMenu" package="com.angrybirds.game" visibility="public" xPosition="1354.0" yPosition="398.0">
+      <Fields>
+        <Field name="background" type="Texture" visibility="package"/>
+        <Field name="sbackgroung" type="Sprite" visibility="package"/>
+        <Field name="background1" type="Texture" visibility="package"/>
+        <Field name="sbackgroung1" type="Sprite" visibility="package"/>
+        <Field name="counter" type="int" visibility="package"/>
+        <Field name="Game" type="MainGame" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="MainGame" name="Game"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="show" returnType="void" visibility="public"/>
+        <Method name="render" returnType="void" visibility="public">
+          <Argument type="float" name="delta"/>
+        </Method>
+        <Method name="resize" returnType="void" visibility="public">
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+        </Method>
+        <Method name="pause" returnType="void" visibility="public"/>
+        <Method name="resume" returnType="void" visibility="public"/>
+        <Method name="hide" returnType="void" visibility="public"/>
+        <Method name="dispose" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Obstacle" package="com.angrybirds.game" visibility="public" xPosition="23.0" yPosition="802.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="World" name="world"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+          <Argument type="boolean" name="isStatic"/>
+          <Argument type="Sprite" name="sprite"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCondition" returnType="int" visibility="public"/>
+        <Method name="create" returnType="Body" visibility="protected">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+          <Argument type="boolean" name="isStatic"/>
+          <Argument type="World" name="world"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pig" package="com.angrybirds.game" visibility="public" xPosition="20.0" yPosition="160.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="World" name="world"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+          <Argument type="boolean" name="isStatic"/>
+          <Argument type="Sprite" name="sprite"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="create" returnType="Body" visibility="protected">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+          <Argument type="boolean" name="isStatic"/>
+          <Argument type="World" name="world"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="yellowBird" package="com.angrybirds.game" visibility="public" xPosition="20.0" yPosition="296.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="World" name="world"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+          <Argument type="boolean" name="isStatic"/>
+          <Argument type="Sprite" name="sprite"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="create" returnType="Body" visibility="protected">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+          <Argument type="boolean" name="isStatic"/>
+          <Argument type="World" name="world"/>
+        </Method>
+        <Method name="getCondition" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Game" source="com.angrybirds.game.MainMenu" target="com.angrybirds.game.MainGame" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Game" source="com.angrybirds.game.game" target="com.angrybirds.game.MainGame" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Game" source="com.angrybirds.game.LevelsMenu" target="com.angrybirds.game.MainGame" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.angrybirds.game.game2" target="com.angrybirds.game.Bird" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="player" source="com.angrybirds.game.game" target="com.angrybirds.game.Everything" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="com.angrybirds.game.yellowBird" target="com.angrybirds.game.Everything"/>
+    <IsRelation name="is" source="com.angrybirds.game.Obstacle" target="com.angrybirds.game.Everything"/>
+    <IsRelation name="is" source="com.angrybirds.game.Bird" target="com.angrybirds.game.Everything"/>
+    <UseRelation source="com.angrybirds.game.game" target="com.angrybirds.game.yellowBird" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Game" source="com.angrybirds.game.game2" target="com.angrybirds.game.MainGame" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="com.angrybirds.game.Pig" target="com.angrybirds.game.Everything"/>
+    <HasRelation name="player" source="com.angrybirds.game.game2" target="com.angrybirds.game.Everything" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
